@@ -6,7 +6,7 @@ This library provides ability to run callbacks/closure/invokable instance in par
 
 - [Quick Start](#quick-start)
 - [API](#api)
-	- [Pipeline](#pipeline)
+	- [Pipeline](#pipeline-1)
 	- [PipelineBuilder](#pipelinebuilder)
 	- [Processor](#processor)
 	- [InterruptibleProcessor](#interruptibleprocessor)
@@ -91,7 +91,7 @@ echo sprintf("%s\n", $payload);
 #### Parameter
 
 - ```$tasks``` The tasks, can be list of closure/class instance, defaulting to empty array
-- ```\Gandung\Pipeline\ProcessorInterface``` The class instance which implements ```ProcessorInterface```
+- ```\Gandung\Pipeline\ProcessorInterface $processor``` The class instance which implements ```ProcessorInterface```, defaulting to ```null```
 
 #### Return Value
 
@@ -116,3 +116,25 @@ An immutable copy of ```\Gandung\Pipeline\Pipeline```
 #### Return Value
 
 Mixed
+
+## PipelineBuilder
+
+```add($task)```
+
+#### Parameter
+
+- ```$task``` The task, can be closure/class instance
+
+#### Return Value
+
+An immutable copy of ```Gandung\Pipeline\PipelineBuilder```
+
+```build(ProcessorInterface $processor = null)```
+
+#### Parameter
+
+- ```\Gandung\Pipeline\ProcessorInterface $processor``` The class instance which implements ```ProcessorInterface```, defaulting to ```null```
+
+#### Return Value
+
+An instance of ```\Gandung\Pipeline\Pipeline```
