@@ -37,7 +37,7 @@ use Gandung\Pipeline\Tests\Fixtures\FooTask;
 use Gandung\Pipeline\Tests\Fixtures\BarTask;
 use Gandung\Pipeline\Tests\Fixtures\BazTask;
 
-// Instance based task. class instance must implements __invoke.
+// Instance based task. Class instance must implements __invoke and TaskInterface class interface.
 $pipe = (new Pipeline)
 	->pipe(new FooTask)
 	->pipe(new BarTask)
@@ -48,3 +48,47 @@ echo sprintf("%s\n", $payload);
 ```
 
 This will print the same result as above.
+
+### Build tasks first, then run.
+
+```php
+use Gandung\Pipeline\PipelineBuilder;
+
+// Closure based task.
+$builder = (new PipelineBuilder)
+	->add(function($q) { return $q; })
+	->add(function($q) { return join(' ', [$q, 'bar']); })
+	->add(function($q) { return join(' ', [$q, 'baz']); });
+$pipe = $builder->build();
+$payload = $pipe->invokeAll('foo');
+
+echo sprintf("%s\n", $payload);
+```
+
+```php
+use Gandung\Pipeline\PipelineBuilder;
+use Gandung\Pipeline\Tests\Fixtures\FooTask;
+use Gandung\Pipeline\Tests\Fixtures\BarTask;
+use Gandung\Pipeline\Tests\Fixtures\BazTask;
+
+// Instance based task. Class instance must implements __invoke and TaskInterface class interface.
+$builder = (new PipelineBuilder)
+	->add(new FooTask)
+	->add(new BarTask)
+	->add(new BazTask);
+$pipe = $builder->build();
+$payload = $pipe->invokeAll('foo');
+
+echo sprintf("%s\n", $payload);
+```
+
+# API
+
+## Pipeline
+
+- ```__construct($tasks = [], ProcessorInterface $processor = null)```
+
+#### Parameter
+
+- ```$tasks``` The tasks, can be list of closure/class instance, defaulting to empty array.
+- ```\Gandung\Pipeline\ProcessorInterface``` The class instance which implements ```ProcessorInterface```
