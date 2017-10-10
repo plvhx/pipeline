@@ -1,0 +1,27 @@
+{
+    "name": "gandung/pipeline",
+    "description": "A PHP package to invoke parallel closure or invokable class instance",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.7.16 || ^6.0.8"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Paulus Gandung Prakosa",
+            "email": "rvn.plvhx@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Gandung\\Pipeline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gandung\\Pipeline\\Tests\\": "tests/"
+        }
+    }
+}
