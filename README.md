@@ -1,6 +1,7 @@
 # Pipeline
 
 [![Build status](https://ci.appveyor.com/api/projects/status/nk83gq5nha1v9abj?svg=true)](https://ci.appveyor.com/project/plvhx/pipeline)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/69475e00-91d6-44b0-8b0b-8a33a5b853eb/mini.png)](https://insight.sensiolabs.com/projects/69475e00-91d6-44b0-8b0b-8a33a5b853eb)
 
 This library provides ability to run callbacks/closure/invokable instance in parallel.
 
