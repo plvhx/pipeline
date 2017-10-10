@@ -1,5 +1,7 @@
 # Pipeline
 
+[![Build status](https://ci.appveyor.com/api/projects/status/nk83gq5nha1v9abj?svg=true)](https://ci.appveyor.com/project/plvhx/pipeline)
+
 This library provides ability to run callbacks/closure/invokable instance in parallel.
 
 # Table Of Content
