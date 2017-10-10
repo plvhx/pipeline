@@ -86,9 +86,15 @@ echo sprintf("%s\n", $payload);
 
 ## Pipeline
 
-- ```__construct($tasks = [], ProcessorInterface $processor = null)```
+```__construct($tasks = [], ProcessorInterface $processor = null)```
 
 #### Parameter
 
 - ```$tasks``` The tasks, can be list of closure/class instance, defaulting to empty array.
 - ```\Gandung\Pipeline\ProcessorInterface``` The class instance which implements ```ProcessorInterface```
+
+### Return Value
+
+None
+
+```pipe($task)```
