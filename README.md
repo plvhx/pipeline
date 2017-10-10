@@ -90,11 +90,29 @@ echo sprintf("%s\n", $payload);
 
 #### Parameter
 
-- ```$tasks``` The tasks, can be list of closure/class instance, defaulting to empty array.
+- ```$tasks``` The tasks, can be list of closure/class instance, defaulting to empty array
 - ```\Gandung\Pipeline\ProcessorInterface``` The class instance which implements ```ProcessorInterface```
 
-### Return Value
+#### Return Value
 
 None
 
 ```pipe($task)```
+
+#### Parameter
+
+- ```$task``` The task, can be closure/class instance
+
+#### Return Value
+
+An immutable copy of ```\Gandung\Pipeline\Pipeline```
+
+```invokeAll($param)```
+
+#### Parameter
+
+- ```$param``` Task parameter
+
+#### Return Value
+
+Mixed
