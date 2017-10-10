@@ -138,3 +138,56 @@ An immutable copy of ```Gandung\Pipeline\PipelineBuilder```
 #### Return Value
 
 An instance of ```\Gandung\Pipeline\Pipeline```
+
+## Processor
+
+```invoke($tasks, $param)```
+
+#### Parameter
+
+- ```$tasks``` The tasks, can be list of closure/class instance
+- ```$param``` Task parameter
+
+#### Return Value
+
+Mixed
+
+```resume()```
+
+#### Parameter
+
+None
+
+#### Return Value
+
+None
+
+```freeze()```
+
+#### Parameter
+
+None
+
+#### Return Value
+
+None
+
+```interrupt()```
+
+#### Parameter
+
+None
+
+#### Return Value
+
+None
+
+```pause()```
+
+#### Parameter
+
+None
+
+#### Return Value
+
+None
